@@ -1,0 +1,5 @@
+(defun last1(L)
+	;(if (null (rest L))
+	(if (atom (rest L))
+		(rest L)
+	(last(rest L))))

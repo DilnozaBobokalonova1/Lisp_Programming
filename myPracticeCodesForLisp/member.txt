@@ -1,0 +1,21 @@
+;; Dribble of #<IO TERMINAL-STREAM> started 2017-09-01 19:27:55
+#<OUTPUT BUFFERED FILE-STREAM CHARACTER #P"member.txt">
+Break 5 [7]> (list-member '(a b) '((a a) (a b) (a c)))
+NIL
+Break 5 [7]> (trace list-member)
+WARNING: TRACE: redefining function LIST-MEMBER in top-level, was defined in
+         /home/students/dbobokalonova/myPracticeCodesForLisp/listMember.lisp
+;; Tracing function LIST-MEMBER.
+(LIST-MEMBER)
+Break 5 [7]> (list-member '(a b) '((a a) (a b) (a c)))
+1. Trace: (LIST-MEMBER '(A B) '((A A) (A B) (A C)))
+2. Trace: (LIST-MEMBER '(A B) '((A B) (A C)))
+3. Trace: (LIST-MEMBER '(A B) '((A C)))
+4. Trace: (LIST-MEMBER '(A B) 'NIL)
+4. Trace: LIST-MEMBER ==> NIL
+3. Trace: LIST-MEMBER ==> NIL
+2. Trace: LIST-MEMBER ==> NIL
+1. Trace: LIST-MEMBER ==> NIL
+NIL
+Break 5 [7]> (dribble)
+;; Dribble of #<IO TERMINAL-STREAM> finished 2017-09-01 19:29:05
